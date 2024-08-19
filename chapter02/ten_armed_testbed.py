@@ -150,11 +150,11 @@ def figure_2_2(runs=2000, time=1000):
 
 def figure_2_3(runs=2000, time=1000):
     bandits = []
-    bandits.append(Bandit(epsilon=0, initial=5, step_size=0.1))
+    bandits.append(Bandit(epsilon=0.1, initial=5, step_size=0.1))
     bandits.append(Bandit(epsilon=0.1, initial=0, step_size=0.1))
     best_action_counts, _ = simulate(runs, time, bandits)
 
-    plt.plot(best_action_counts[0], label='$\epsilon = 0, q = 5$')
+    plt.plot(best_action_counts[0], label='$\epsilon = 0.1, q = 5$')
     plt.plot(best_action_counts[1], label='$\epsilon = 0.1, q = 0$')
     plt.xlabel('Steps')
     plt.ylabel('% optimal action')
